@@ -24,9 +24,9 @@ namespace SolrNet.Impl
 			this.serverUrl = serverUrl;
 		}
 
-		public Task<string> PostAsync(string relativeUrl, string s)
+		public Task<string> PostAsync(string relativeUrl, string s, IEnumerable<KeyValuePair<string, string>> parameters = null)
 		{
-			return conn.PostAsync(relativeUrl, s);
+			return conn.PostAsync(relativeUrl, s, parameters);
 		}
 
         public string Post(string relativeUrl, string s)

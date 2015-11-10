@@ -29,7 +29,7 @@ namespace SolrNet {
         /// <param name="relativeUrl">Path to post to</param>
         /// <param name="s">POST content</param>
         /// <returns></returns>
-        Task<string> PostAsync(string relativeUrl, string s);
+        Task<string> PostAsync(string relativeUrl, string s, IEnumerable<KeyValuePair<string, string>> parameters = null);
         string Post(string relativeUrl, string s);
 
         /// <summary>

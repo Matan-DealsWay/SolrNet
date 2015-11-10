@@ -74,13 +74,19 @@ namespace SolrNet.Commands {
 
 	    public string Execute(ISolrConnection connection) {
 	        var xml = ConvertToXml();
-			return connection.Post("/update", xml);
+            return connection.Post("/update", xml);
 		}
 
         public async Task<string> ExecuteAsync(ISolrConnection connection)
         {
             var xml = ConvertToXml();
-            return await connection.PostAsync("/update", xml);
+            Dictionary<string, string> queryParameteres = new Dictionary<string, string>();
+            if (parameters != null && parameters.UpdateChain != null)
+            {
+                queryParameteres.Add("update.chain", parameters.UpdateChain);
+            }
+
+            return await connection.PostAsync("/update", xml, queryParameteres);
         }
 	}
 }

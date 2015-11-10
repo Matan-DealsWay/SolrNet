@@ -185,5 +185,10 @@ namespace SolrNet.Tests.Mocks {
         {
             throw new NotImplementedException();
         }
+
+        public Task<ResponseHeader> AddRangeAsync(IEnumerable<T> docs, AddParameters addParameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

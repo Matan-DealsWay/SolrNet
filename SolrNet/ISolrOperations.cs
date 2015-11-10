@@ -101,6 +101,8 @@ namespace SolrNet {
         ResponseHeader AddRange(IEnumerable<T> docs);
 
         Task<ResponseHeader> AddRangeAsync(IEnumerable<T> docs);
+        Task<ResponseHeader> AddRangeAsync(IEnumerable<T> docs, AddParameters addParameters);
+
 
         /// <summary>
         /// Adds / updates several documents at once

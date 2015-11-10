@@ -79,10 +79,10 @@ namespace SolrNet.Impl {
         /// </summary>
         public int Timeout { get; set; }
 
-        public async Task<string> PostAsync(string relativeUrl, string s) {
+        public async Task<string> PostAsync(string relativeUrl, string s, IEnumerable<KeyValuePair<string, string>> parameters = null) {
             var bytes = Encoding.UTF8.GetBytes(s);
             using (var content = new MemoryStream(bytes))
-                return await PostStreamAsync(relativeUrl, "text/xml; charset=utf-8", content, null);
+                return await PostStreamAsync(relativeUrl, "text/xml; charset=utf-8", content, parameters);
         }
 
         public string Post(string relativeUrl, string s)

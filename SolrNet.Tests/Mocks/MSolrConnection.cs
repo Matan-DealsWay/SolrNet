@@ -26,7 +26,7 @@ namespace SolrNet.Tests.Mocks {
             return get.Invoke(relativeUrl, parameters);
         }
 
-        public Task<string> PostAsync(string relativeUrl, string s) {
+        public Task<string> PostAsync(string relativeUrl, string s, IEnumerable<KeyValuePair<string, string>> parameters = null) {
             throw new NotImplementedException();
         }
 

@@ -49,6 +49,8 @@ namespace SolrNet
         /// </summary>
         /// <value>The time period (in milliseconds) within which the document will be committed to the index.</value>
         public int? CommitWithin { get; set; }
+
+        public string UpdateChain { get; set; }
     }
 
 }

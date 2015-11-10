@@ -44,7 +44,7 @@ namespace SolrNet.Tests.Utils {
             return r;
         }
 
-        public Task<string> PostAsync(string relativeUrl, string s) {
+        public Task<string> PostAsync(string relativeUrl, string s, IEnumerable<KeyValuePair<string, string>> parameters = null) {
             throw new NotImplementedException();
         }
 
